@@ -12,19 +12,26 @@ Hospital Mgt System
         </div>
         <div>
             <form action="#">
+                @csrf
                 <div>
                     <label class="label" for="username">Username</label><br>
-                    <input type="text" name="username" placeholder="Username" class="input-box">
+                    <input type="text" name="username" @error('name') border-red-500 @enderror placeholder="Username" class="input-box">
+                    @error('name')
+                        {{$message}}
+                    @enderror
                 </div>
                 <div>
                     <label class="label" for="password">Password</label><br>
-                    <input type="password" name="password" placeholder="Password" class="input-box">
+                    <input type="password" name="password" @error('password') border-red-500 @enderror placeholder="Password" class="input-box">
+                    @error('password')
+                        {{$message}}
+                    @enderror
                 </div>
                 <div class="text-right mb-4">
-                    <span><a href="#">Forgot your Password?</a></span>
+                    <span><a href="#" class="hover:text-blue-600 hover:underline">Forgot your Password?</a></span>
                 </div>
                 <div class="text-center">
-                    <button class="btn">Login</button>
+                    <button class="btn tracking-wider">Login</button>
                 </div>
             </form>
         </div>
