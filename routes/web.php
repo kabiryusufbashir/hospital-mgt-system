@@ -14,4 +14,7 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', [LoginController::class, 'index'])->name('landing-page');
+Route::get('/', [LoginController::class, 'index']);
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+

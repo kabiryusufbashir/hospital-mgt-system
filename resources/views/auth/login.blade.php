@@ -11,7 +11,7 @@ Hospital Mgt System
             <img class="w-28 mx-auto" src="{{ asset('images/logo.png') }}" alt="Logo">
         </div>
         <div>
-            <form action="#">
+            <form  action="{{route('login')}}" method="POST">
                 @csrf
                 <div>
                     <label class="label" for="username">Username</label><br>
