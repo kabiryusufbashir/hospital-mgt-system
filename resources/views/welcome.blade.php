@@ -13,18 +13,18 @@ Hospital Mgt System
         <div>
             <form action="#">
                 <div>
-                    <label class="font-medium" for="username">Username</label><br>
-                    <input type="text" name="username" placeholder="Username" class="px-5 w-full border border-gray-300 h-12 rounded-full my-2 text-lg">
+                    <label class="label" for="username">Username</label><br>
+                    <input type="text" name="username" placeholder="Username" class="input-box">
                 </div>
                 <div>
-                    <label class="font-medium" for="password">Password</label><br>
-                    <input type="password" name="password" placeholder="Password" class="px-5 w-full border border-gray-300 h-12 rounded-full my-2 text-lg">
+                    <label class="label" for="password">Password</label><br>
+                    <input type="password" name="password" placeholder="Password" class="input-box">
                 </div>
                 <div class="text-right mb-4">
                     <span><a href="#">Forgot your Password?</a></span>
                 </div>
                 <div class="text-center">
-                    <button class="bg-blue-600 py-2 text-white rounded-full uppercase w-full h-12">Login</button>
+                    <button class="btn">Login</button>
                 </div>
             </form>
         </div>

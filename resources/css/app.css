@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn{
+    @apply bg-blue-600 py-2 text-white rounded-full uppercase w-full h-12;
+}
+
+.input-box{
+    @apply px-5 w-full border border-gray-300 h-12 rounded-full my-2 text-lg;
+}
+
+.label{
+    @apply font-medium;
+}

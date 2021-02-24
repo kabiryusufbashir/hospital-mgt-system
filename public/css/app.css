@@ -31176,6 +31176,38 @@ video {
           animation: bounce 1s infinite;
 }
 
+.btn{
+  --tw-bg-opacity: 1;
+  background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
+  border-radius: 9999px;
+  height: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.input-box{
+  --tw-border-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+  border-radius: 9999px;
+  border-width: 1px;
+  height: 3rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  width: 100%;
+}
+
+.label{
+  font-weight: 500;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
