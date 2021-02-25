@@ -65,10 +65,21 @@ class LoginController extends Controller
         try{
             if(Auth::attempt($request->only('username', 'password'), $request->remember)){
                 $request->session()->regenerate();
-                return redirect()->intended('dashboard');
+                return redirect()->route('dashboard');
+            }else{
+                return back()->with('error', 'Incorrect username or password');
             }
         }catch(Exception $e){
-            return redirect('/')->with('error', 'Invalid Login credentials');
+            return redirect('/')->with('error', $e->getMessage());
         }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }

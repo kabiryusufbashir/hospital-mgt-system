@@ -16,9 +16,10 @@ use App\Http\Controllers\Dashboard\DashboardController;
 */
 
 // Login User 
-Route::get('/', [LoginController::class, 'index']);
+Route::get('/', [LoginController::class, 'index'])->name('landing-page');
 Route::post('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Dashboard 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

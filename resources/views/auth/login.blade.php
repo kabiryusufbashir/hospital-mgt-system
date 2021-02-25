@@ -6,6 +6,9 @@ Hospital Mgt System
 
 @section('content')
     <div class="sm:w-1/3 sm:mx-auto md:my-24 p-5 bg-white rounded shadow-md">
+        <div class="text-2xl">
+            @include('layouts.messages')
+        </div>
         <div class="border-b pb-3">
             <h2 class="text-center text-3xl mb-4">{{$system_settings->hospital_name ?? 'Piccolo Hospital Mgt. System'}}</h2>
             <img class="w-28 mx-auto" src="{{ $system_settings->photo ?? asset('images/doctor.png') }}" alt="Logo">
@@ -14,7 +17,7 @@ Hospital Mgt System
             <form action="{{route('login')}}" method="POST">
                 @csrf
                 <div class="my-2">
-                    <input type="text" name="username" placeholder="Username" class="input-box @error('username') border-red-500 @enderror h-24">
+                    <input type="text" name="username" placeholder="Username" class="input-box @error('username') border-red-500 @enderror">
                     @error('username')
                         {{$message}}
                     @enderror

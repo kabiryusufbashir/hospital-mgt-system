@@ -1,6 +1,6 @@
 @if(count($errors) > 0)
     @foreach($errors->all() as $error)
-        <div class="bg-red-500 text-white-600 py-2 px-4 text-center">
+        <div class="bg-red-500 text-red-600 py-2 px-4 text-center">
             {{$error}}
 			<hr>
         </div>
@@ -16,7 +16,7 @@
 
 
 @if(session('error'))
-    <div class="text-white-600 py-2 px-4 text-center">
+    <div class="text-red-600 py-2 px-4 text-center">
         <h4>{{session('error')}}</h4>
 		<hr>
     </div>
