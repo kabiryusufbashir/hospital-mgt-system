@@ -14,14 +14,14 @@ Hospital Mgt System
             <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div>
-                    <input type="text" name="hospital-name" @error('hospital-name') border-red-500 @enderror placeholder="Hospital Name" class="input-box">
-                    @error('hospital-name')
+                    <input type="text" name="hospital_name" value="{{old('hospital_name')}}" @error('hospital_name') border-red-500 @enderror placeholder="Hospital Name" class="input-box">
+                    @error('hospital_name')
                         {{$message}}
                     @enderror
                 </div>
                 <div>
-                    <input type="text" name="username" @error('name') border-red-500 @enderror placeholder="Username" class="input-box">
-                    @error('name')
+                    <input type="text" name="username" value="{{old('username')}}" @error('username') border-red-500 @enderror placeholder="Username" class="input-box">
+                    @error('username')
                         {{$message}}
                     @enderror
                 </div>
