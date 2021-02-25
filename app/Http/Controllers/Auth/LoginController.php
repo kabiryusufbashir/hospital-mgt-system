@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
+use App\Models\Systemsettings;
 
 class LoginController extends Controller
 {
@@ -30,10 +31,18 @@ class LoginController extends Controller
 
         try{
             User::create([
-                'hospital_name'=>$request->hospital_name,
                 'username'=>$request->username,
-                'password'=>Hash::make($request->password)
+                'password'=>Hash::make($request->password),
+                'category'=> 1,
+                'status'=> 1,
             ]);
+            try{
+                Systemsettings::create([
+                    'hospital_name'=>$request->hospital_name
+                ]);
+            }catch(Exception $e){
+                return redirect('/')->with('error', $e->getMessage());
+            }
         }catch(Exception $e){
             return redirect('/')->with('error', $e->getMessage());
         }
