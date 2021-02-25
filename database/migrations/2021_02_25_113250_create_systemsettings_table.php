@@ -16,10 +16,10 @@ class CreateSystemsettingsTable extends Migration
         Schema::create('systemsettings', function (Blueprint $table) {
             $table->id();
             $table->string('hospital_name');
-            $table->string('phone');
-            $table->text('address');
+            $table->string('phone')->nullable();
+            $table->text('address')->nullable();
             $table->string('email')->unique();
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

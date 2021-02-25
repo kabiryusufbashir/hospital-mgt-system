@@ -5,17 +5,23 @@ Hospital Mgt System
 @endsection
 
 @section('content')
-    <div class="sm:w-1/3 sm:mx-auto my-24 p-5 bg-white rounded shadow-md">
-        <div>
-            <h2 class="text-center text-3xl text-blue-600 mb-4">Create an Account</h2>
+    <div class="sm:w-1/3 sm:mx-auto md:my-16 p-5 bg-white rounded shadow-md">
+        <div class="border-b pb-3">
+            <h2 class="text-center text-3xl mb-4">Create an Account</h2>
+            <img class="w-28 mx-auto" src="{{ $system_settings->photo ?? asset('images/doctor.png') }}" alt="Logo">
         </div>
-        <hr>
         <div class="mt-5">
             <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div>
                     <input type="text" name="hospital_name" value="{{old('hospital_name')}}" @error('hospital_name') border-red-500 @enderror placeholder="Hospital Name" class="input-box">
                     @error('hospital_name')
+                        {{$message}}
+                    @enderror
+                </div>
+                <div>
+                    <input type="email" name="email" value="{{old('email')}}" @error('email') border-red-500 @enderror placeholder="Email Address" class="input-box">
+                    @error('email')
                         {{$message}}
                     @enderror
                 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 use App\Models\Systemsettings;
@@ -14,10 +15,12 @@ class LoginController extends Controller
     public function index()
     {
         $users = User::get();
+        $system_settings = Systemsettings::where('id', 1)->first();
+
         if($users->count() === 0){
             return view('auth.register');    
         }else{
-            return view('auth.login');
+            return view('auth.login', ['system_settings'=>$system_settings]);
         }
     }
 
@@ -26,26 +29,29 @@ class LoginController extends Controller
         $validated = $request->validate([
             'hospital_name'=>'required',
             'username'=>'required',
+            'email'=>'required|email|max:255',
             'password'=>'required|confirmed'
         ]);
 
         try{
             User::create([
                 'username'=>$request->username,
+                'email'=>$request->email,
                 'password'=>Hash::make($request->password),
                 'category'=> 1,
-                'status'=> 1,
+                'status'=> 1
             ]);
             try{
                 Systemsettings::create([
-                    'hospital_name'=>$request->hospital_name
+                    'hospital_name'=>$request->hospital_name,
+                    'email'=>$request->email,
                 ]);
+                return redirect('/')->with('success', 'Account Created successfully!');
             }catch(Exception $e){
                 return redirect('/')->with('error', $e->getMessage());
             }
         }catch(Exception $e){
             return redirect('/')->with('error', $e->getMessage());
         }
-
     }
 }

@@ -8,7 +8,6 @@
     <title>@yield('title')</title>
 </head>
 <body class="bg-gray-100">
-    @include('layouts.messages')
     @yield('content')
 </body>
 </html>
