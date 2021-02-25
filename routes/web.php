@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Dashboard\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,7 @@ use App\Http\Controllers\Auth\LoginController;
 // Login User 
 Route::get('/', [LoginController::class, 'index']);
 Route::post('/register', [LoginController::class, 'register'])->name('register');
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
+// Dashboard 
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

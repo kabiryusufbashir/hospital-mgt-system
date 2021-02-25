@@ -54,4 +54,21 @@ class LoginController extends Controller
             return redirect('/')->with('error', $e->getMessage());
         }
     }
+
+    public function login(Request $request)
+    {
+        $validated = $request->validate([
+            'username'=>'required',
+            'password'=>'required'
+        ]);
+
+        try{
+            if(Auth::attempt($request->only('username', 'password'), $request->remember)){
+                $request->session()->regenerate();
+                return redirect()->intended('dashboard');
+            }
+        }catch(Exception $e){
+            return redirect('/')->with('error', 'Invalid Login credentials');
+        }
+    }
 }
