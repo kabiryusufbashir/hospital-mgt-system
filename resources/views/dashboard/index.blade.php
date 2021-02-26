@@ -7,8 +7,8 @@
 @section('content')
     <div class="bg-blue-600 h-16">
         <div class="flex justify-between grid grid-cols-4 py-3">
-            <div class="flex items-center justify-between col-span-1">
-                <img class="w-10 ml-3" src="{{ $system_settings->photo ?? asset('images/logo.png') }}" alt="Logo">
+            <div class="ml-3 flex items-center justify-between col-span-1">
+                <img class="w-10" src="{{ $system_settings->photo ?? asset('images/logo.png') }}" alt="Logo">
                 <h2 class="text-white ml-2">{{$system_settings->hospital_name ?? 'Piccolo Hospital Mgt. System'}}</h2>
                 <svg class="w-8 h-8 text-white cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
             </div>
@@ -25,11 +25,55 @@
             </div>
         </div>
     </div>
-    <div class="grid grid-cols-4">
-        <div class="bg-white col-span-1 flex justify-between">
-            Nav
+    <div class="grid grid-cols-5">
+        <div class="px-3 bg-white col-span-1">
+            <h2 class="text-2xl py-3 border-b">Menu</h2>
+            <ul>
+                <li class="py-3 flex border-b">
+                   <img class="w-7 mr-4" src="{{ asset('images/dashboard.png') }}" alt="Dashboard">
+                    
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="py-3 flex border-b">
+                   <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
+                    <a href="#">Doctors</a>
+                </li>
+                <li class="py-3 flex border-b">
+                    <img class="w-7 mr-4" src="{{ asset('images/nurse.png') }}" alt="Nurse">
+                    <a href="#">Nurses</a>
+                </li>
+                <li class="py-3 flex border-b"> 
+                  <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
+                    
+                   <a href="#">Pharmacists</a>
+                </li>
+                <li class="py-3 flex border-b">
+                   <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
+                    
+                    <a href="#">Laboratorists</a>
+                </li>
+                <li class="py-3 flex border-b">
+                   <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
+                    
+                    <a href="#">Accountants</a>
+                </li>
+                <li class="py-3 flex border-b">
+                   <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
+                    
+                    <a href="#">Patients</a>
+                </li>
+                <li class="py-3 flex border-b">
+                   <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
+                    
+                    <a href="#">Manage Hospital</a>
+                </li>
+                <li class="py-3 flex border-b">
+                    <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
         </div>
-        <div class="bg-green-300 col-span-3">
+        <div class="bg-green-300 col-span-4">
             Info
         </div>
     </div>
