@@ -15,3 +15,20 @@ user_caret.addEventListener('click', ()=>{
         caret.classList.remove('roate-90');
     }
 });
+
+// Doctor caret 
+const doctorCaret = document.querySelector("#doctorCaret");
+const doctorMenu = document.querySelector("#doctorMenu");
+
+doctorCaret.addEventListener('click', ()=>{
+    if(doctorMenu.classList.contains('hidden')){
+        doctorMenu.classList.remove('hidden');
+        doctorCaret.classList.add('transform');
+        doctorCaret.classList.add('rotate-90');
+        doctorCaret.classList.add('transition');
+    }else{
+        doctorMenu.classList.add('hidden');
+        doctorCaret.classList.remove('transform');
+        doctorCaret.classList.remove('roate-90');
+    }
+});

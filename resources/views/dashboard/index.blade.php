@@ -58,32 +58,42 @@
                     <img class="w-7 mr-4" src="{{ asset('images/dashboard.png') }}" alt="Dashboard">
                     <a href="#">Dashboard</a>
                 </li>
+                <!-- Doctor -->
                 <li class="py-3 flex border-b">
                     <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
                     <a href="#">Doctors</a>
-                    <svg class="w-5 h-5 ml-auto my-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <svg id="doctorCaret" class="cursor-pointer w-5 h-5 ml-auto my-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
                 </li>
-                <li class="py-3 flex border-b">
+                <div id="doctorMenu" class="hidden bg-white px-10 text-gray-500 text-ms">
+                    <li class="py-3 flex border-b">
+                        <a href="#">Add Doctor</a>
+                    </li>
+                    <li class="py-3 flex">
+                        <a href="#">All Doctors</a>
+                    </li>
+                </div>
+                <!-- Nurse  -->
+                <li class="py-3 flex border-t">
                     <img class="w-7 mr-4" src="{{ asset('images/nurse.png') }}" alt="Nurse">
                     <a href="#">Nurses</a>
                 </li>
-                <li class="py-3 flex border-b"> 
+                <li class="py-3 flex border-t"> 
                     <img class="w-7 mr-4" src="{{ asset('images/pharmacist.png') }}" alt="Pharmacists">
                     <a href="#">Pharmacists</a>
                 </li>
-                <li class="py-3 flex border-b">
+                <li class="py-3 flex border-t">
                     <img class="w-7 mr-4" src="{{ asset('images/laboratorist.png') }}" alt="Laboratorist">
                     <a href="#">Laboratorists</a>
                 </li>
-                <li class="py-3 flex border-b">
+                <li class="py-3 flex border-t">
                     <img class="w-7 mr-4" src="{{ asset('images/accounting.png') }}" alt="Accounting">
                     <a href="#">Accountants</a>
                 </li>
-                <li class="py-3 flex border-b">
+                <li class="py-3 flex border-t">
                     <img class="w-7 mr-4" src="{{ asset('images/patient.png') }}" alt="Patient">
                     <a href="#">Patients</a>
                 </li>
-                <li class="py-3 flex border-b">
+                <li class="py-3 flex border-t">
                     <img class="w-7 mr-4" src="{{ asset('images/manage.png') }}" alt="Manage">
                     <a href="#">Manage Hospital</a>
                 </li>
