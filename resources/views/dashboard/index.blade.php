@@ -26,17 +26,17 @@
                     </span>
                     <div id="user_caret_menu" class="hidden absolute top-5 right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div class="py-1 text-sm text-gray-700" aria-orientation="vertical">
-                            <span class="flex block px-4 py-2 hover:bg-gray-100 hover:text-gray-900 border-b">
+                            <span class="user-setting-caret">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
                                 &nbsp;&nbsp;
                                 <a href="#" class="">Edit profile</a>
                             </span>
-                            <span class="flex block px-4 py-2 hover:bg-gray-100 hover:text-gray-900 border-b">
+                            <span class="user-setting-caret">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z"></path></svg>
                                 &nbsp;&nbsp;
                                 <a href="#" class="">Change Password</a>
                             </span>
-                            <span class="flex block px-4 py-2 hover:bg-gray-100 hover:text-gray-900">
+                            <span class="user-setting-caret">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path></svg>
                                 &nbsp;&nbsp;
                                 <form action="{{route('logout')}}" method="POST">
@@ -62,9 +62,9 @@
                 <li class="py-3 flex border-b">
                     <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
                     <a href="#">Doctors</a>
-                    <svg id="doctorCaret" class="cursor-pointer w-5 h-5 ml-auto my-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <svg id="doctorCaret" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
                 </li>
-                <div id="doctorMenu" class="hidden bg-white px-10 text-gray-500 text-ms">
+                <div id="doctorMenu" class="users-caret-menu hidden">
                     <li class="py-3 flex border-b">
                         <a href="#">Add Doctor</a>
                     </li>
@@ -73,14 +73,34 @@
                     </li>
                 </div>
                 <!-- Nurse  -->
-                <li class="py-3 flex border-t">
+                <li class="py-3 flex border-t border-b">
                     <img class="w-7 mr-4" src="{{ asset('images/nurse.png') }}" alt="Nurse">
                     <a href="#">Nurses</a>
+                    <svg id="nurseCaret" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
                 </li>
-                <li class="py-3 flex border-t"> 
+                <div id="nurseMenu" class="users-caret-menu hidden">
+                    <li class="py-3 flex border-b">
+                        <a href="#">Add Nurse</a>
+                    </li>
+                    <li class="py-3 flex">
+                        <a href="#">All Nurse</a>
+                    </li>
+                </div>
+                <!-- Pharmacist  -->
+                <li class="py-3 flex border-t border-b"> 
                     <img class="w-7 mr-4" src="{{ asset('images/pharmacist.png') }}" alt="Pharmacists">
                     <a href="#">Pharmacists</a>
+                    <svg id="pharmacistCaret" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
                 </li>
+                <div id="pharmacistMenu" class="users-caret-menu hidden">
+                    <li class="py-3 flex border-b">
+                        <a href="#">Add Pharmacist</a>
+                    </li>
+                    <li class="py-3 flex">
+                        <a href="#">All Pharmacists</a>
+                    </li>
+                </div>
+
                 <li class="py-3 flex border-t">
                     <img class="w-7 mr-4" src="{{ asset('images/laboratorist.png') }}" alt="Laboratorist">
                     <a href="#">Laboratorists</a>

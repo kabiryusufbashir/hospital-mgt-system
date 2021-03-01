@@ -13,3 +13,15 @@
 .label{
     @apply font-medium;
 }
+
+.user-setting-caret{
+    @apply flex block px-4 py-2 hover:bg-gray-100 hover:text-gray-900 border-b;
+}
+
+.users-caret{
+    @apply cursor-pointer w-5 h-5 ml-auto my-auto text-gray-400;
+}
+
+.users-caret-menu{
+    @apply bg-white px-10 text-gray-500;
+}

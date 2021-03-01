@@ -32,3 +32,37 @@ doctorCaret.addEventListener('click', ()=>{
         doctorCaret.classList.remove('roate-90');
     }
 });
+
+// Nurse caret 
+const nurseCaret = document.querySelector("#nurseCaret");
+const nurseMenu = document.querySelector("#nurseMenu");
+
+nurseCaret.addEventListener('click', ()=>{
+    if(nurseMenu.classList.contains('hidden')){
+        nurseMenu.classList.remove('hidden');
+        nurseCaret.classList.add('transform');
+        nurseCaret.classList.add('rotate-90');
+        nurseCaret.classList.add('transition');
+    }else{
+        nurseMenu.classList.add('hidden');
+        nurseCaret.classList.remove('transform');
+        nurseCaret.classList.remove('roate-90');
+    }
+});
+
+// Pharmacist caret 
+const pharmacistCaret = document.querySelector("#pharmacistCaret");
+const pharmacistMenu = document.querySelector("#pharmacistMenu");
+
+pharmacistCaret.addEventListener('click', ()=>{
+    if(pharmacistMenu.classList.contains('hidden')){
+        pharmacistMenu.classList.remove('hidden');
+        pharmacistCaret.classList.add('transform');
+        pharmacistCaret.classList.add('rotate-90');
+        pharmacistCaret.classList.add('transition');
+    }else{
+        pharmacistMenu.classList.add('hidden');
+        pharmacistCaret.classList.remove('transform');
+        pharmacistCaret.classList.remove('roate-90');
+    }
+});
