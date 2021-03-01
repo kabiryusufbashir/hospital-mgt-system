@@ -1,3 +1,18 @@
+// Menu caret 
+const menuCaret = document.querySelector("#menuCaret");
+const menu = document.querySelector("#menu");
+const statsDiv = document.querySelector("#statsDiv");
+
+menuCaret.addEventListener('click', ()=>{
+    if(menu.classList.contains('hidden')){
+        menu.classList.remove('hidden');
+        statsDiv.classList.remove('col-span-4');
+        statsDiv.classList.add('col-span-5');
+    }else{
+        menu.classList.add('hidden');
+    }
+});
+
 // User caret 
 const user_caret = document.querySelector("#user_caret");
 const user_caret_menu = document.querySelector("#user_caret_menu");

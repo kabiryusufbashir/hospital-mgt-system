@@ -8,11 +8,13 @@
     <!-- Nav  -->
     <div class="bg-blue-600 h-16">
         <div class="flex justify-between grid grid-cols-4 py-3">
+            <!-- system details -->
             <div class="ml-3 flex items-center justify-between col-span-1">
                 <img class="w-10" src="{{ $system_settings->photo ?? asset('images/logo.png') }}" alt="Logo">
                 <h2 class="text-white ml-2">{{$system_settings->hospital_name ?? 'Piccolo Hospital Mgt. System'}}</h2>
-                <svg class="w-8 h-8 text-white cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                <svg id="menuCaret" class="w-8 h-8 text-white cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
             </div>
+            <!-- user details -->
             <div class="flex items-center justify-end col-span-3 mr-3">
                 <div class="flex">
                     <svg class="w-6 h-6 text-white mx-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg></span>
@@ -54,7 +56,8 @@
 
     <!-- Menu  -->
     <div class="grid grid-cols-5">
-        <div class="px-3 bg-white col-span-1">
+        <!-- Nav link  -->
+        <div id="menu" class="px-3 bg-white col-span-1">
             <h2 class="text-2xl py-3 border-b font-medium">Menu</h2>
             <ul>
                 <li class="py-3 flex border-b">
@@ -137,7 +140,7 @@
                     </li>
                 </div>
 
-                <!-- patient  -->
+                <!-- Patient  -->
                 <li class="py-3 flex border-t">
                     <img class="w-7 mr-4" src="{{ asset('images/patient.png') }}" alt="Patient">
                     <a href="#">Patients</a>
@@ -159,7 +162,8 @@
                 </li>
             </ul>
         </div>
-        <div class="bg-green-300 col-span-4">
+        <!-- Stats -->
+        <div id="statsDiv" class="bg-green-300 col-span-4">
             Info
         </div>
     </div>
