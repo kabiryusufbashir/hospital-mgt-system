@@ -4,13 +4,17 @@ const menu = document.querySelector("#menu");
 const statsDiv = document.querySelector("#statsDiv");
 
 menuCaret.addEventListener('click', ()=>{
-    if(menu.classList.contains('hidden')){
-        menu.classList.remove('hidden');
+    if(!menu.classList.contains('hidden')){
+        menu.classList.add('hidden');
         menu.classList.remove('col-span-1');
         menu.classList.add('col-span-0');
         statsDiv.classList.add('col-span-5');
     }else{
-        menu.classList.add('hidden');
+        menu.classList.remove('hidden');
+        menu.classList.remove('col-span-0');
+        menu.classList.add('col-span-1');
+        statsDiv.classList.remove('col-span-5');
+        statsDiv.classList.add('col-span-4');
     }
 });
 
