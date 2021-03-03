@@ -234,6 +234,60 @@
                     </div>
                 </div>
             </div>
+            <div class="md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
+                <div id="users"></div>
+                    
+                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                    <script type="text/javascript">
+                        var users =  <?php echo json_encode($users) ?>;
+                    
+                        Highcharts.chart('users', {
+                            title: {
+                                text: 'Staff Graph'
+                            },
+                            subtitle: {
+                                // text: 'Source: itsolutionstuff.com.com'
+                            },
+                            xAxis: {
+                                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                            },
+                            yAxis: {
+                                title: {
+                                    text: 'Number of New Staff'
+                                }
+                            },
+                            legend: {
+                                layout: 'vertical',
+                                align: 'right',
+                                verticalAlign: 'middle'
+                            },
+                            plotOptions: {
+                                series: {
+                                    allowPointSelect: true
+                                }
+                            },
+                            series: [{
+                                name: 'New Staff',
+                                data: users
+                            }],
+                            responsive: {
+                                rules: [{
+                                    condition: {
+                                        maxWidth: 500
+                                    },
+                                    chartOptions: {
+                                        legend: {
+                                            layout: 'horizontal',
+                                            align: 'center',
+                                            verticalAlign: 'bottom'
+                                        }
+                                    }
+                                }]
+                            }
+                    });
+                    </script>
+            </div>
         </div>
     </div>
+    
 @endsection
