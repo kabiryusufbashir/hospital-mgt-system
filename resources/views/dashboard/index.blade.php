@@ -63,7 +63,7 @@
     <!-- Menu  -->
     <div class="md:grid md:grid-cols-5">
         <!-- Nav link  -->
-        <div id="menu" class="px-3 bg-white col-span-1">
+        <div id="menu" class="hidden md:block px-3 bg-white col-span-1">
             <h2 class="text-2xl py-3 border-b font-medium">Menu</h2>
             <ul>
                 <li class="py-3 flex border-b">
@@ -171,14 +171,68 @@
         <!-- Stats -->
         <div id="statsDiv" class="col-span-4">
             <!-- System Stats  -->
-            <div class="grid grid-cols-4 gap-4 mx-2 my-6">
-                <div class="bg-white p-6 shadow flex justify-between">
-                    <img class="w-14 bg-green-400 rounded-full p-1" src="{{ asset('images/doctor_stats.png') }}" alt="Doctor Stats Icon">
-                    <span class="bg-green-400 p-0 text-white">Doctors</span>
+            <div class="md:grid md:grid-cols-4 md:gap-4 mx-2 my-6">
+                <!-- Doctor  -->
+                <div class="stats-card">
+                    <div>
+                        <img class="stats-icon bg-blue-400" src="{{ asset('images/doctor_stats.png') }}" alt="Doctor Stats Icon">
+                    </div>
+                    <div>
+                        <div class="stats-value">10</div>
+                        <div class="bg-blue-400 text-white px-4 py-1 rounded-lg flex items-center">
+                            <span>Doctors</span>
+                            &nbsp;
+                            <span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            </span>
+                        </div>    
+                    </div>
                 </div>
-                <div class="bg-white py-8 shadow">Nurses</div>
-                <div class="bg-white py-8 shadow">Pharmacists</div>
-                <div class="bg-white py-8 shadow">Patients</div>
+                <div class="stats-card">
+                    <div>
+                        <img class="stats-icon bg-yellow-400" src="{{ asset('images/patient_stats.png') }}" alt="Doctor Stats Icon">
+                    </div>
+                    <div>
+                        <div class="stats-value">50</div>
+                        <div class="bg-yellow-500 text-white px-4 py-1 rounded-lg flex items-center">
+                            <span>Patient</span>
+                            &nbsp;
+                            <span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            </span>
+                        </div>    
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <div>
+                        <img class="stats-icon bg-green-400" src="{{ asset('images/attend.png') }}" alt="Attend Stats Icon">
+                    </div>
+                    <div>
+                        <div class="stats-value">50</div>
+                        <div class="bg-green-500 text-white px-4 py-1 rounded-lg flex items-center">
+                            <span>Attend</span>
+                            &nbsp;
+                            <span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            </span>
+                        </div>    
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <div>
+                        <img class="stats-icon bg-purple-400" src="{{ asset('images/waiting.png') }}" alt="Waiting Stats Icon">
+                    </div>
+                    <div>
+                        <div class="stats-value">5</div>
+                        <div class="bg-purple-500 text-white px-4 py-1 rounded-lg flex items-center">
+                            <span>Waiting</span>
+                            &nbsp;
+                            <span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            </span>
+                        </div>    
+                    </div>
+                </div>
             </div>
         </div>
     </div>

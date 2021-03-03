@@ -25,3 +25,15 @@
 .users-caret-menu{
     @apply bg-white px-10 text-gray-500;
 }
+
+.stats-icon{
+    @apply w-16 h-16 rounded-full p-2;
+}
+
+.stats-card{
+    @apply bg-white shadow flex justify-between items-center p-6;
+}
+
+.stats-value{
+    @apply text-right text-3xl font-medium;
+}

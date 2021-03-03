@@ -31256,6 +31256,31 @@ video {
   color: rgba(107, 114, 128, var(--tw-text-opacity));
 }
 
+.stats-icon{
+  border-radius: 9999px;
+  height: 4rem;
+  padding: 0.5rem;
+  width: 4rem;
+}
+
+.stats-card{
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.stats-value{
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: right;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

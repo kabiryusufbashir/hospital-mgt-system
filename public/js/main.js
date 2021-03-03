@@ -5,6 +5,7 @@ const statsDiv = document.querySelector("#statsDiv");
 
 menuCaret.addEventListener('click', ()=>{
     if(!menu.classList.contains('hidden')){
+        menu.classList.remove('md:block');
         menu.classList.add('hidden');
         menu.classList.remove('col-span-1');
         menu.classList.add('col-span-0');
