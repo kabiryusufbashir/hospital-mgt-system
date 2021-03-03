@@ -169,8 +169,17 @@
             </ul>
         </div>
         <!-- Stats -->
-        <div id="statsDiv" class="bg-green-300 col-span-4">
-            Info
+        <div id="statsDiv" class="col-span-4">
+            <!-- System Stats  -->
+            <div class="grid grid-cols-4 gap-4 mx-2 my-6">
+                <div class="bg-white p-6 shadow flex justify-between">
+                    <img class="w-14 bg-green-400 rounded-full p-1" src="{{ asset('images/doctor_stats.png') }}" alt="Doctor Stats Icon">
+                    <span class="bg-green-400 p-0 text-white">Doctors</span>
+                </div>
+                <div class="bg-white py-8 shadow">Nurses</div>
+                <div class="bg-white py-8 shadow">Pharmacists</div>
+                <div class="bg-white py-8 shadow">Patients</div>
+            </div>
         </div>
     </div>
 @endsection
