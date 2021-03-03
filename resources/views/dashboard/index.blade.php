@@ -236,8 +236,6 @@
             </div>
             <div class="md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
                 <div id="users"></div>
-                    
-                    <script src="https://code.highcharts.com/highcharts.js"></script>
                     <script type="text/javascript">
                         var users =  <?php echo json_encode($users) ?>;
                     
@@ -253,7 +251,7 @@
                             },
                             yAxis: {
                                 title: {
-                                    text: 'Number of New Staff'
+                                    text: 'No of Staff'
                                 }
                             },
                             legend: {
@@ -267,7 +265,7 @@
                                 }
                             },
                             series: [{
-                                name: 'New Staff',
+                                name: 'Staff',
                                 data: users
                             }],
                             responsive: {
