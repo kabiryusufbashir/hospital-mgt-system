@@ -235,7 +235,7 @@
                 </div>
             </div>
             <div class="md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
-                <div>
+                <div class="bg-white">
                     {!! $chart->container() !!}
                 </div>
             </div>

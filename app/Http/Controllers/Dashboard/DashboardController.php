@@ -16,21 +16,21 @@ class DashboardController extends Controller
     }
     
     public function index()
-    {
-        // $users = User::select(\DB::raw("COUNT(*) as count"))
-        //             ->whereYear('created_at', date('Y'))
-        //             ->groupBy(\DB::raw("Month(created_at)"))
-        //             ->pluck('count');
+    {   
+        $doctors = User::where('category', '2')->count();
+        $nurses = User::where('category', '3')->count();
+        $pharmacists = User::where('category', '4')->count();
+        $laboratorists = User::where('category', '5')->count();
+        $accountants = User::where('category', '6')->count();
         
         $today_users = User::whereDate('created_at', today())->count();
         $yesterday_users = User::whereDate('created_at', today()->subDays(1))->count();
         $users_2_days_ago = User::whereDate('created_at', today()->subDays(2))->count();
 
         $chart = new UsersChart;
-        $chart->labels(['2 days ago', 'Yesterday', 'Today']);
-        $chart->dataset('My dataset', 'line', [$users_2_days_ago, $yesterday_users, $today_users]);
+        $chart->labels(['Doctors', 'Nurses', 'Pharmacists', 'Laboratorists', 'Accountant']);
+        $chart->dataset('Staff Statistic', 'bar', [$doctors, $nurses, $pharmacists, $laboratorists, $accountants])->options(['backgroundColor' => 'blue']);
         
-        // return view('dashboard.index', ['users'=>$users, 'chart'=>$chart]);
         return view('dashboard.index', ['chart'=>$chart]);
     }
 
