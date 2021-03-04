@@ -235,57 +235,11 @@
                 </div>
             </div>
             <div class="md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
-                <div id="users"></div>
-                    <script type="text/javascript">
-                        var users =  <?php echo json_encode($users) ?>;
-                    
-                        Highcharts.chart('users', {
-                            title: {
-                                text: 'Staff Graph'
-                            },
-                            subtitle: {
-                                // text: 'Source: itsolutionstuff.com.com'
-                            },
-                            xAxis: {
-                                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-                            },
-                            yAxis: {
-                                title: {
-                                    text: 'No of Staff'
-                                }
-                            },
-                            legend: {
-                                layout: 'vertical',
-                                align: 'right',
-                                verticalAlign: 'middle'
-                            },
-                            plotOptions: {
-                                series: {
-                                    allowPointSelect: true
-                                }
-                            },
-                            series: [{
-                                name: 'Staff',
-                                data: users
-                            }],
-                            responsive: {
-                                rules: [{
-                                    condition: {
-                                        maxWidth: 500
-                                    },
-                                    chartOptions: {
-                                        legend: {
-                                            layout: 'horizontal',
-                                            align: 'center',
-                                            verticalAlign: 'bottom'
-                                        }
-                                    }
-                                }]
-                            }
-                    });
-                    </script>
+                <div>
+                    {!! $chart->container() !!}
+                </div>
             </div>
         </div>
     </div>
-    
+    {!! $chart->script() !!}
 @endsection
