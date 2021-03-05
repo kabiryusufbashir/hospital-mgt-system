@@ -15,7 +15,8 @@ class CreateBiosTable extends Migration
     {
         Schema::create('bios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            // $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->string('name');
             $table->string('city');
@@ -26,6 +27,8 @@ class CreateBiosTable extends Migration
             $table->string('address');
             $table->string('photo');
             $table->timestamps();
+
+            $table->index('user_id');
         });
     }
 

@@ -242,8 +242,14 @@
                     {!! $patientChart->container() !!}
                 </div>
             </div>
+            <div class="md:grid md:grid-cols-1 md:gap-4 mx-2 my-6">
+                <div class="bg-white">
+                    {!! $salesChart->container() !!}
+                </div>
+            </div>
         </div>
     </div>
     {!! $userChart->script() !!}
     {!! $patientChart->script() !!}
+    {!! $salesChart->script() !!}
 @endsection

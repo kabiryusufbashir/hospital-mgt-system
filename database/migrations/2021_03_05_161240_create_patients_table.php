@@ -15,7 +15,8 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            // $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
             $table->string('fileNo');
             $table->string('title')->nullable();
             $table->string('name')->nullable();
@@ -25,6 +26,8 @@ class CreatePatientsTable extends Migration
             $table->text('address')->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();
+
+            $table->index('user_id');
         });
     }
 

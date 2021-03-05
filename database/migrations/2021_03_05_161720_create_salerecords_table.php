@@ -15,16 +15,22 @@ class CreateSalerecordsTable extends Migration
     {
         Schema::create('salerecords', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); //Accountant Id
+            // $table->foreignId('patient_id')->constrained()->onDelete('cascade');
+            // $table->foreignId('user_id')->constrained()->onDelete('cascade'); //Accountant Id
+            $table->unsignedBigInteger('patient_id');
+            $table->unsignedBigInteger('user_id');
             $table->double('amount');
             $table->double('quantity');
             $table->double('discount');
             $table->double('grossTotal');
-            $table->string('salesType');
+            $table->string('serviceType');
             $table->string('paymentMethod');
             $table->string('paymentStatus');
             $table->timestamps();
+
+            $table->index('patient_id');
+            $table->index('user_id');
+        
         });
     }
 
