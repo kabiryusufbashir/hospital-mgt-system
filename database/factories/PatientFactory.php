@@ -27,7 +27,7 @@ class PatientFactory extends Factory
             'fileNo' => Str::random(10),
             'title' => $this->faker->title,
             'name' => $this->faker->name,
-            'gender' => $this->faker->name($gender = null|'male'|'female'),
+            'gender' => $this->faker->randomElement($array = array ('Male','Female')),
             'dob' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'phone' => $this->faker->e164PhoneNumber,
             'address' => $this->faker->address,
