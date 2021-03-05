@@ -9,8 +9,7 @@ use App\Charts\UsersChart;
 use DB;
 
 class DashboardController extends Controller
-{
-    
+{    
     public function __construct(){
         $this->middleware(['auth']);
     }
@@ -29,7 +28,7 @@ class DashboardController extends Controller
 
         $chart = new UsersChart;
         $chart->labels(['Doctors', 'Nurses', 'Pharmacists', 'Laboratorists', 'Accountant']);
-        $chart->dataset('Staff Statistic', 'bar', [$doctors, $nurses, $pharmacists, $laboratorists, $accountants])->options(['backgroundColor' => 'blue']);
+        $chart->dataset('Staff Statistic', 'bar', [$doctors, $nurses, $pharmacists, $laboratorists, $accountants])->options(['backgroundColor' => '#60A5FA']);
         
         return view('dashboard.index', ['chart'=>$chart]);
     }
