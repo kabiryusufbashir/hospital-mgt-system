@@ -236,10 +236,14 @@
             </div>
             <div class="md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
                 <div class="bg-white">
-                    {!! $chart->container() !!}
+                    {!! $userChart->container() !!}
+                </div>
+                <div class="bg-white">
+                    {!! $patientChart->container() !!}
                 </div>
             </div>
         </div>
     </div>
-    {!! $chart->script() !!}
+    {!! $userChart->script() !!}
+    {!! $patientChart->script() !!}
 @endsection
