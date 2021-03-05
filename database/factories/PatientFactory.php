@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Patient;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class PatientFactory extends Factory
 {
@@ -22,7 +23,15 @@ class PatientFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => $this->faker->numberBetween($min = 2, $max = 360),
+            'fileNo' => Str::random(10),
+            'title' => $this->faker->title,
+            'name' => $this->faker->name,
+            'gender' => $this->faker->name($gender = null|'male'|'female'),
+            'dob' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'phone' => $this->faker->e164PhoneNumber,
+            'address' => $this->faker->address,
+            'photo' => $this->faker->imageUrl($width = 640, $height = 480),
         ];
     }
 }

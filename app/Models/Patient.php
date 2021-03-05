@@ -14,6 +14,10 @@ class Patient extends Model
         'name',
     ];
 
+    public function user(){
+        return $this->hasOne(User::class);
+    }
+
     public function salerecord()
     {
         return $this->hasMany(Salerecord::class);
