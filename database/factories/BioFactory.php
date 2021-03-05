@@ -22,7 +22,16 @@ class BioFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => $this->faker->numberBetween($min = 2, $max = 443),
+            'title' => $this->faker->title,
+            'name' => $this->faker->name,
+            'city' => $this->faker->city,
+            'country' => $this->faker->country,
+            'gender' => $this->faker->randomElement($array = array ('Male','Female')),
+            'dob' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'phone' => $this->faker->e164PhoneNumber,
+            'address' => $this->faker->address,
+            'photo' => $this->faker->imageUrl($width = 640, $height = 480),
         ];
     }
 }
