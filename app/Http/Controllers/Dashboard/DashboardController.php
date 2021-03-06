@@ -28,6 +28,7 @@ class DashboardController extends Controller
         $pharmacists = User::where('category', '4')->count();
         $laboratorists = User::where('category', '5')->count();
         $accountants = User::where('category', '6')->count();
+        $patient = User::where('category', '7')->count();
 
         $userChart = new UsersChart;
         $userChart->labels(['Doctors', 'Nurses', 'Pharmacists', 'Laboratorists', 'Accountant']);
@@ -60,7 +61,7 @@ class DashboardController extends Controller
         $salesChart->labels(['January', 'February', 'March', 'April', 'May','June','July', 'August', 'September', 'October', 'November', 'December']);
         $salesChart->dataset('Sale Statistic', 'bar', [$jan_sales, $feb_sales, $march_sales, $april_sales, $may_sales, $june_sales, $july_sales, $aug_sales, $sept_sales, $oct_sales, $nov_sales, $dec_sales])->options(['backgroundColor'=>'#34D399']);
 
-        return view('dashboard.index', ['userChart'=>$userChart, 'patientChart'=>$patientChart, 'salesChart'=>$salesChart]);
+        return view('dashboard.index', ['userChart'=>$userChart, 'patientChart'=>$patientChart, 'salesChart'=>$salesChart, 'doctor'=>$doctors, 'patient'=>$patient]);
     }
 
 

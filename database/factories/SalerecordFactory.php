@@ -36,7 +36,7 @@ class SalerecordFactory extends Factory
             'serviceType' => $this->faker->randomElement($array = array ('Drug','Consulatation Fee')),
             'paymentMethod' => $this->faker->randomElement($array = array ('Cash','Transfer')),
             'paymentStatus' => $this->faker->randomElement($array = array ('Paid','Pending')),
-            'created_at' => $this->faker->dateTimeBetween($startDate = '-1 months', $endDate = 'now', $timezone = null),
+            'created_at' => $this->faker->dateTimeBetween($startDate = '-3 months', $endDate = 'now', $timezone = null),
         ];
     }
 }

@@ -178,7 +178,7 @@
                         <img class="stats-icon bg-blue-400" src="{{ asset('images/doctor_stats.png') }}" alt="Doctor Stats Icon">
                     </div>
                     <div>
-                        <div class="stats-value">10</div>
+                        <div class="stats-value">{{ $doctor }}</div>
                         <div class="bg-blue-400 text-white px-4 py-1 rounded-lg flex items-center">
                             <span>Doctors</span>
                             &nbsp;
@@ -188,12 +188,13 @@
                         </div>    
                     </div>
                 </div>
+                <!-- Patient  -->
                 <div class="stats-card">
                     <div>
                         <img class="stats-icon bg-yellow-400" src="{{ asset('images/patient_stats.png') }}" alt="Doctor Stats Icon">
                     </div>
                     <div>
-                        <div class="stats-value">50</div>
+                        <div class="stats-value">{{ $patient }}</div>
                         <div class="bg-yellow-500 text-white px-4 py-1 rounded-lg flex items-center">
                             <span>Patient</span>
                             &nbsp;
@@ -203,6 +204,7 @@
                         </div>    
                     </div>
                 </div>
+                <!-- Attend  -->
                 <div class="stats-card">
                     <div>
                         <img class="stats-icon bg-green-400" src="{{ asset('images/attend.png') }}" alt="Attend Stats Icon">
@@ -218,6 +220,7 @@
                         </div>    
                     </div>
                 </div>
+                <!-- Waiting  -->
                 <div class="stats-card">
                     <div>
                         <img class="stats-icon bg-purple-400" src="{{ asset('images/waiting.png') }}" alt="Waiting Stats Icon">
@@ -236,15 +239,18 @@
             </div>
             <div class="md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
                 <div class="bg-white">
-                    {!! $userChart->container() !!}
+                    <div class="stats-value px-16 py-4">Staff Statistic</div>
+                    <div>{!! $userChart->container() !!}</div>
                 </div>
                 <div class="bg-white">
-                    {!! $patientChart->container() !!}
+                    <div class="stats-value px-16 py-4">Patient Statistic</div>
+                    <div>{!! $patientChart->container() !!}</div>
                 </div>
             </div>
             <div class="md:grid md:grid-cols-1 md:gap-4 mx-2 my-6">
                 <div class="bg-white">
-                    {!! $salesChart->container() !!}
+                    <div class="stats-value px-16 py-4">Sales Statistic 2021</div>
+                    <div>{!! $salesChart->container() !!}</div>
                 </div>
             </div>
         </div>
