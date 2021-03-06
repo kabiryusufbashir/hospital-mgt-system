@@ -27,8 +27,8 @@ class SalerecordFactory extends Factory
         $grossTotal = 0.5/100 * ($amount * $quantity);
 
         return [
-            'patient_id' => $this->faker->numberBetween($min = 2, $max = 443),
-            'user_id' => 10,
+            'patient_id' => $this->faker->numberBetween($min = 2, $max = 676),
+            'user_id' => 25,
             'amount' => $amount,
             'quantity' => $quantity,
             'discount' => $discount,
