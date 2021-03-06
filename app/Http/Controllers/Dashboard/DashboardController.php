@@ -43,17 +43,22 @@ class DashboardController extends Controller
         $patientChart->dataset('Patient Statistic', 'bar', [$patientMale, $patientFemale])->options(['backgroundColor' => '#FCD34D']);
 
         // Sale Stats
-        $today_sales = Salerecord::whereDate('created_at', today())->count();
-        $last_month_sales = Salerecord::whereDate('created_at', '<=', today()->subDays(1))->whereDate('created_at', '>=', today()->subDays(30))->where('paymentStatus', 'paid')->get();
-        $last_month_two_sales = Salerecord::whereDate('created_at', '<=', today()->subDays(31))->whereDate('created_at', '>=', today()->subDays(60))->where('paymentStatus', 'paid')->count();
-        $last_month_three_sales = Salerecord::whereDate('created_at', '<=', today()->subDays(61))->whereDate('created_at', '>=', today()->subDays(90))->where('paymentStatus', 'paid')->count();
-        $last_month_four_sales = Salerecord::whereDate('created_at', '<=', today()->subDays(91))->whereDate('created_at', '>=', today()->subDays(120))->where('paymentStatus', 'paid')->count();
-        $last_month_five_sales = Salerecord::whereDate('created_at', '<=', today()->subDays(121))->whereDate('created_at', '>=', today()->subDays(150))->where('paymentStatus', 'paid')->count();
-        $last_month_six_sales = Salerecord::whereDate('created_at', '<=', today()->subDays(151))->whereDate('created_at', '>=', today()->subDays(180))->where('paymentStatus', 'paid')->count();
+        $jan_sales = Salerecord::whereMonth('created_at', '1')->whereYear('created_at', '2021')->count();
+        $feb_sales = Salerecord::whereMonth('created_at', '2')->whereYear('created_at', '2021')->count();
+        $march_sales = Salerecord::whereMonth('created_at', '3')->whereYear('created_at', '2021')->count();
+        $april_sales = Salerecord::whereMonth('created_at', '4')->whereYear('created_at', '2021')->count();
+        $may_sales = Salerecord::whereMonth('created_at', '5')->whereYear('created_at', '2021')->count();
+        $june_sales = Salerecord::whereMonth('created_at', '6')->whereYear('created_at', '2021')->count();
+        $july_sales = Salerecord::whereMonth('created_at', '7')->whereYear('created_at', '2021')->count();
+        $aug_sales = Salerecord::whereMonth('created_at', '8')->whereYear('created_at', '2021')->count();
+        $sept_sales = Salerecord::whereMonth('created_at', '9')->whereYear('created_at', '2021')->count();
+        $oct_sales = Salerecord::whereMonth('created_at', '10')->whereYear('created_at', '2021')->count();
+        $nov_sales = Salerecord::whereMonth('created_at', '11')->whereYear('created_at', '2021')->count();
+        $dec_sales = Salerecord::whereMonth('created_at', '12')->whereYear('created_at', '2021')->count();
 
         $salesChart = new SalesChart;
-        $salesChart->labels(['Today', 'Last Month', 'Last Two Months', 'Last Three Months', 'Last Four Months','Last Five Months','Last Six Months']);
-        $salesChart->dataset('Sale Statistic', 'bar', [$today_sales, $last_month_sales, $last_month_two_sales, $last_month_three_sales, $last_month_four_sales, $last_month_five_sales, $last_month_six_sales])->options(['backgroundColor'=>'#10B981']);
+        $salesChart->labels(['January', 'February', 'March', 'April', 'May','June','July', 'August', 'September', 'October', 'November', 'December']);
+        $salesChart->dataset('Sale Statistic', 'bar', [$jan_sales, $feb_sales, $march_sales, $april_sales, $may_sales, $june_sales, $july_sales, $aug_sales, $sept_sales, $oct_sales, $nov_sales, $dec_sales])->options(['backgroundColor'=>'#34D399']);
 
         return view('dashboard.index', ['userChart'=>$userChart, 'patientChart'=>$patientChart, 'salesChart'=>$salesChart]);
     }
