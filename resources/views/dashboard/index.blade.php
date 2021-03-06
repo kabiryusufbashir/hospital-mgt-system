@@ -247,8 +247,12 @@
                     <div>{!! $patientChart->container() !!}</div>
                 </div>
             </div>
-            <div class="md:grid md:grid-cols-1 md:gap-4 mx-2 my-6">
-                <div class="bg-white">
+            <div class="bg-white md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
+                <div class="">
+                    <div class="stats-value px-16 py-4">Payment Status Statistic</div>
+                    <div>{!! $payChart->container() !!}</div>
+                </div>
+                <div>
                     <div class="stats-value px-16 py-4">Sales Statistic 2021</div>
                     <div>{!! $salesChart->container() !!}</div>
                 </div>
@@ -257,5 +261,6 @@
     </div>
     {!! $userChart->script() !!}
     {!! $patientChart->script() !!}
+    {!! $payChart->script() !!}
     {!! $salesChart->script() !!}
 @endsection
