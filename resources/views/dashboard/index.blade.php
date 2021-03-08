@@ -210,7 +210,7 @@
                         <img class="stats-icon bg-green-400" src="{{ asset('images/attend.png') }}" alt="Attend Stats Icon">
                     </div>
                     <div>
-                        <div class="stats-value">50</div>
+                        <div class="stats-value">{{ $patientAttend }}</div>
                         <div class="bg-green-500 text-white px-4 py-1 rounded-lg flex items-center">
                             <span>Attend</span>
                             &nbsp;
@@ -226,7 +226,7 @@
                         <img class="stats-icon bg-purple-400" src="{{ asset('images/waiting.png') }}" alt="Waiting Stats Icon">
                     </div>
                     <div>
-                        <div class="stats-value">5</div>
+                        <div class="stats-value">{{ $patientNotAttend }}</div>
                         <div class="bg-purple-500 text-white px-4 py-1 rounded-lg flex items-center">
                             <span>Waiting</span>
                             &nbsp;

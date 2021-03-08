@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Patient;
 use App\Models\Salerecord;
+use App\Models\Patientdatarecord;
 
 use App\Charts\UsersChart;
 use App\Charts\PatientChart;
@@ -39,6 +40,8 @@ class DashboardController extends Controller
         //Patient Stats
         $patientMale = Patient::where('gender', 'male')->count();
         $patientFemale = Patient::where('gender', 'female')->count();
+        $patientAttend = Patientdatarecord::where('attendStatus', 'yes')->count();
+        $patientNotAttend = Patientdatarecord::where('attendStatus', 'no')->count();
 
         $patientChart = new PatientChart;
         $patientChart->labels(['Male', 'Female']);
@@ -70,7 +73,7 @@ class DashboardController extends Controller
         $payChart->labels(['Paid', 'Pending']);
         $payChart->dataset('Payment Statistic', 'bar', [$paid, $pending])->options(['backgroundColor'=>'#EF4444']);
         
-        return view('dashboard.index', ['userChart'=>$userChart, 'patientChart'=>$patientChart, 'salesChart'=>$salesChart, 'payChart'=>$payChart, 'doctor'=>$doctors, 'patient'=>$patient]);
+        return view('dashboard.index', ['userChart'=>$userChart, 'patientChart'=>$patientChart, 'salesChart'=>$salesChart, 'payChart'=>$payChart, 'doctor'=>$doctors, 'patient'=>$patient, 'patientAttend'=>$patientAttend, 'patientNotAttend'=>$patientNotAttend]);
     }
 
 
