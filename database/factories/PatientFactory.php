@@ -23,7 +23,7 @@ class PatientFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->numberBetween($min = 2, $max = 676),
+            'user_id' => $this->faker->unique()->numberBetween($min = 102, $max = 601),
             'fileNo' => Str::random(10),
             'title' => $this->faker->title,
             'name' => $this->faker->name,

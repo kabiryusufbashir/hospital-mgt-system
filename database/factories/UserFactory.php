@@ -25,7 +25,8 @@ class UserFactory extends Factory
         return [
             'username' => $this->faker->username,
             'email' => $this->faker->unique()->safeEmail,
-            'category' => $this->faker->numberBetween($min = 2, $max = 7),
+            // 'category' => $this->faker->numberBetween($min = 2, $max = 7),
+            'category' => 7,
             'status' => 1,
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

@@ -22,7 +22,7 @@ class BioFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->numberBetween($min = 2, $max = 363),
+            'user_id' => $this->faker->numberBetween($min = 2, $max = 101),
             'title' => $this->faker->title,
             'name' => $this->faker->name,
             'city' => $this->faker->city,

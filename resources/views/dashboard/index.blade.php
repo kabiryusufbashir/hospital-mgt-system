@@ -247,6 +247,7 @@
                     <div>{!! $patientChart->container() !!}</div>
                 </div>
             </div>
+            <!-- Charts  -->
             <div class="bg-white md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
                 <div class="">
                     <div class="stats-value px-16 py-4">Payment Status Statistic</div>

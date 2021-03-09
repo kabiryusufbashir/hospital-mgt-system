@@ -30,7 +30,7 @@ class CreatePatientdatarecordsTable extends Migration
             $table->integer('nurseId');
             $table->integer('pharmacistId');
             $table->integer('laboratoristId');
-            $table->integer('accountanttId');
+            $table->integer('accountantId');
             $table->string('attendStatus');
             $table->timestamps();
 
