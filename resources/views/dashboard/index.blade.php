@@ -81,7 +81,7 @@
                 </li>
                 <div id="doctorMenu" class="users-caret-menu hidden">
                     <li class="py-3 flex border-b">
-                        <a href="#">Add Doctor</a>
+                        <a class="modal-open-doctor" href="#">Add Doctor</a>
                     </li>
                     <li class="py-3 flex">
                         <a href="#">All Doctors</a>
@@ -262,6 +262,11 @@
             </div>
         </div>
     </div>
+    <!-- Modal  -->
+        <!-- doctor  -->
+        @include('includes.adddoctor')
+
+    <!-- Chart Script  -->
     {!! $userChart->script() !!}
     {!! $patientChart->script() !!}
     {!! $payChart->script() !!}
