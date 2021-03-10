@@ -7,7 +7,7 @@
 }
 
 .input-box{
-    @apply px-5 w-full border border-gray-300 h-10 rounded-lg my-2 text-lg focus:outline-none;
+    @apply px-5 w-full border border-gray-300 h-12 rounded-lg my-2 text-lg focus:outline-none;
 }
 
 .label{

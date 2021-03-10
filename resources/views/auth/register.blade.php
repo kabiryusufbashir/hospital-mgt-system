@@ -14,7 +14,7 @@ Hospital Mgt System
             <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div>
-                    <input type="text" name="hospital_name" value="{{old('hospital_name')}}" placeholder="Hospital Name" class="input-box @error('hospital_name') border-red-500 @enderror">
+                    <input type="text" name="hospital_name" value="{{old('hospital_name')}}" placeholder="Hospital Name" class="input-box @error('hospital_name') border-red-500 @enderror" autofocus>
                     @error('hospital_name')
                         {{$message}}
                     @enderror

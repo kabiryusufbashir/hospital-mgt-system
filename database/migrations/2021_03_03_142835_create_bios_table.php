@@ -17,15 +17,15 @@ class CreateBiosTable extends Migration
             $table->id();
             // $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
-            $table->string('title');
-            $table->string('name');
-            $table->string('city');
-            $table->string('country');
-            $table->string('gender');
-            $table->string('dob');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('photo');
+            $table->string('title')->nullable();
+            $table->string('name')->nullable();
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('dob')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
 
             $table->index('user_id');

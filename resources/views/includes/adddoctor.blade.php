@@ -28,15 +28,15 @@
                 <div class="px-6 py-4">
                     <form action="{{route('register')}}" method="POST">
                         @csrf
-                        <div class="md:flex justify-between border-b my-2">
+                        <div class="md:flex justify-between my-2">
                             <div class="w-full mx-2">
-                                <input type="text" name="username" value="{{old('username')}}" placeholder="Username" class="input-box @error('username') border-red-500 @enderror">
+                                <input autofocus required type="text" name="username" value="{{old('username')}}" placeholder="Username" class="input-box @error('username') border-red-500 @enderror">
                                 @error('username')
                                     {{$message}}
                                 @enderror
                             </div>
                             <div class="w-full mx-2">
-                                <input type="email" name="email" value="{{old('email')}}" placeholder="Email Address" class="input-box @error('email') border-red-500 @enderror">
+                                <input required type="email" name="email" value="{{old('email')}}" placeholder="Email Address" class="input-box @error('email') border-red-500 @enderror">
                                 @error('email')
                                     {{$message}}
                                 @enderror
@@ -81,7 +81,28 @@
                                 @enderror
                             </div>
                         </div>
-                        
+                        <div class="md:flex justify-between my-2">
+                            <div class="w-full mx-2">
+                                <input type="text" name="city" value="{{old('city')}}" placeholder="City" class="input-box @error('city') border-red-500 @enderror">
+                                @error('city')
+                                    {{$message}}
+                                @enderror
+                            </div>
+                            <div class="w-full mx-2">
+                                <input type="country" name="country" value="{{old('country')}}" placeholder="Country" class="input-box @error('country') border-red-500 @enderror">
+                                @error('country')
+                                    {{$message}}
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="md:flex justify-between my-2">
+                            <div class="w-full mx-2">
+                                <textarea type="text" name="city" value="{{old('address')}}" placeholder="Address" class="input-box @error('address') border-red-500 @enderror"></textarea>
+                                @error('address')
+                                    {{$message}}
+                                @enderror
+                            </div>
+                        </div>
                         <!--Footer-->
                         <div class="px-6 py-4 flex justify-end">
                             <button class="modal-close btn tracking-wider">Add Doctor</button>

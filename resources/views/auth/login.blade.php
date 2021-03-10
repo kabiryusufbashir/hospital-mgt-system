@@ -17,7 +17,7 @@
             <form action="{{route('login')}}" method="POST">
                 @csrf
                 <div class="my-2">
-                    <input type="text" name="username" placeholder="Username" class="input-box @error('username') border-red-500 @enderror">
+                    <input type="text" name="username" placeholder="Username" class="input-box @error('username') border-red-500 @enderror" autofocus>
                     @error('username')
                         {{$message}}
                     @enderror

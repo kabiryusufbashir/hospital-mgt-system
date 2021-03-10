@@ -31192,7 +31192,7 @@ video {
 .input-box{
   --tw-border-opacity: 1;
   border-color: rgba(209, 213, 219, var(--tw-border-opacity));
-  border-radius: 9999px;
+  border-radius: 0.5rem;
   border-width: 1px;
   height: 3rem;
   font-size: 1.125rem;
