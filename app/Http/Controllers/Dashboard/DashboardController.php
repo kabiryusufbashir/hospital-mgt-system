@@ -76,5 +76,4 @@ class DashboardController extends Controller
         return view('dashboard.index', ['userChart'=>$userChart, 'patientChart'=>$patientChart, 'salesChart'=>$salesChart, 'payChart'=>$payChart, 'doctor'=>$doctors, 'patient'=>$patient, 'patientAttend'=>$patientAttend, 'patientNotAttend'=>$patientNotAttend]);
     }
 
-
 }

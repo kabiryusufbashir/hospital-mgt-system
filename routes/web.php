@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Dashboard 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+//Add Doctor
+Route::get('/createdoctor', [DoctorController::class, 'create'])->name('create-doctor');
+Route::post('/adddoctor', [DoctorController::class, 'store'])->name('add-doctor');

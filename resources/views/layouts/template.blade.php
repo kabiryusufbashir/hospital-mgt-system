@@ -7,6 +7,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
     <link rel="Icon" href="{{ asset('images/favicon.ico') }}" type="image/icon">
     <title>@yield('title')</title>
+    <style>
+        
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: visible !important;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     @yield('content')
