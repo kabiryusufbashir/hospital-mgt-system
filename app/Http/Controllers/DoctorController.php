@@ -20,7 +20,7 @@ class DoctorController extends Controller
         $doctors = DB::table('users')
             ->where('users.category','=',2)
             ->join('bios', 'users.id', '=', 'bios.user_id')
-            ->paginate(10);
+            ->paginate(9);
 
         return view('create.doctor', ['doctors'=>$doctors]);
     }
