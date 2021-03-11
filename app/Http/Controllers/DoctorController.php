@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\User;
+use App\Models\Bio;
 
 class DoctorController extends Controller
 {
@@ -13,7 +17,12 @@ class DoctorController extends Controller
 
     public function create()
     {
-        return view('create.doctor');
+        $doctors = DB::table('users')
+            ->where('users.category','=',2)
+            ->join('bios', 'users.id', '=', 'bios.user_id')
+            ->paginate(10);
+
+        return view('create.doctor', ['doctors'=>$doctors]);
     }
 
     public function store(Request $request)
