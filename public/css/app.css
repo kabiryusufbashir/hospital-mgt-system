@@ -31181,6 +31181,14 @@ video {
   background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
   border-radius: 9999px;
   height: 3rem;
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   --tw-text-opacity: 1;
@@ -31307,6 +31315,14 @@ video {
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
+}
+
+.edit-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.edit-btn {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1.25rem;
@@ -31345,6 +31361,14 @@ video {
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
+}
+
+.del-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.del-btn {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1.25rem;
@@ -31383,6 +31407,14 @@ video {
   border-radius: 9999px;
   display: flex;
   align-items: center;
+}
+
+.create-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.create-btn {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
