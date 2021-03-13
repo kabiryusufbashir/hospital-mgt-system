@@ -14,6 +14,9 @@
         @include('includes.dashboardlink')
         <!-- Stats -->
         <div id="statsDiv" class="col-span-4 ml-2">
+            <div class="text-2xl bg-white text-center">
+                @include('layouts.messages')
+            </div>
             <div class="md:grid md:grid-cols-4 md:gap-4">
                 <div class="col-span-1 bg-white p-3">
                     @include('includes.adddoctor')

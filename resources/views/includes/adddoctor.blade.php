@@ -72,7 +72,7 @@
     </div>
     <div class="my-2">
         <div class="w-full">
-            <textarea type="text" name="city" value="{{old('address')}}" placeholder="Address" class="input-box @error('address') border-red-500 @enderror"></textarea>
+            <textarea type="text" name="address" value="{{old('address')}}" placeholder="Address" class="input-box @error('address') border-red-500 @enderror"></textarea>
             @error('address')
                 {{$message}}
             @enderror

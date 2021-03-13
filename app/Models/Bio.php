@@ -9,10 +9,7 @@ class Bio extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'phone',
-    ];
+    protected $guarded = [];
 
     public function user()
     {
