@@ -40,6 +40,7 @@ class DoctorController extends Controller
             'username'=>'required',
             'email'=>'required|email|max:255',
             'name'=>'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $password = 12345678;
@@ -55,9 +56,14 @@ class DoctorController extends Controller
                 'status'=> $status
             ]);
 
+            //Getting doctors' id    
             $doctorId = User::orderBy('id', 'desc')->limit(1)->get();
             $doctorId = $doctorId[0]->id;
 
+            //Storing doctor's Photo
+            $imageName = 'images/doctors/'.time().'.'.$request->photo->extension();  
+            $request->photo->move(public_path('images/doctors'), $imageName);
+            
             try{
                 Bio::create([
                     'title'=>$request->title,
@@ -70,6 +76,7 @@ class DoctorController extends Controller
                     'gender'=>$request->gender,
                     'dob'=>$request->dob,
                     'user_id'=>$doctorId,
+                    'photo'=>$imageName,
                 ]);
                 return back()->with('success', 'Doctor Created successfully!');
             }catch(Exception $e){
@@ -97,6 +104,21 @@ class DoctorController extends Controller
 
     public function destroy($id)
     {
-        //
+        $doctorBio = Bio::where('id', $id)->first();
+        $doctorId = $doctorBio->user_id;
+        $doctorIdRecord = User::where('id', $doctorId)->first();
+
+        try{
+            $doctorBio->delete();
+            try{
+                $doctorIdRecord->delete();
+                return back()->with('success', 'Doctor Deleted');
+            }catch(Exception $e){
+                return back()->with('error', 'Please try again... '.$e);
+            }
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+        
     }
 }

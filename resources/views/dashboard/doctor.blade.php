@@ -61,7 +61,7 @@
                                             </button>
                                         </form>
                                         &nbsp;
-                                        <form action="{{ route('del-doctor', $doctor->id) }}" >
+                                        <form action="{{ route('del-doctor', $doctor->id) }}" method="POST">
                                             @csrf 
                                             @method('DELETE')
                                             <button class="del-btn">

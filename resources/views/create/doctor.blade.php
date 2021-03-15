@@ -18,7 +18,7 @@
                 @include('layouts.messages')
             </div>
             <div class="md:grid md:grid-cols-4 md:gap-4">
-                <div class="col-span-3 bg-white mx-2 p-3">
+                <div class="col-span-4 bg-white p-3">
                     <div class="flex justify-end">
                         <a href="{{ route('all-doctor') }}">
                             <button class="create-btn">
@@ -27,7 +27,7 @@
                             </button>
                         </a>
                     </div>
-                    <div>
+                    <div class="md:flex md:justify-center">
                         @include('includes.adddoctor')
                     </div>    
                 </div>
