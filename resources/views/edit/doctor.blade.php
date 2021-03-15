@@ -28,7 +28,7 @@
                         </a>
                     </div>
                     <div class="md:flex md:justify-center">
-                        @include('includes.adddoctor')
+                        @include('includes.editdoctor')
                     </div>    
                 </div>
             </div>

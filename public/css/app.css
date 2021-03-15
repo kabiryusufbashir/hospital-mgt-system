@@ -31437,6 +31437,52 @@ video {
   transition-duration: 700ms;
 }
 
+.view-btn{
+  --tw-bg-opacity: 1;
+  background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
+}
+
+.view-btn:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(0, 0, 0, var(--tw-border-opacity));
+}
+
+.view-btn {
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.view-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.view-btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.view-btn:hover {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
+
+.view-btn {
+  letter-spacing: 0.05em;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

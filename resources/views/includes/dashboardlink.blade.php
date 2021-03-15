@@ -16,10 +16,10 @@
         </li>
         <div id="doctorMenu" class="users-caret-menu hidden">
             <li class="py-3 flex border-b">
-                <a href="{{ route('create-doctor') }}">Add Doctor</a>
+                <a href="{{ route('create.doctor') }}">Add Doctor</a>
             </li>
             <li class="py-3 flex">
-                <a href="{{ route('all-doctor') }}">All Doctors</a>
+                <a href="{{ route('all.doctor') }}">All Doctors</a>
             </li>
         </div>
         

@@ -94,7 +94,11 @@ class DoctorController extends Controller
 
     public function edit($id)
     {
-        //
+        $doctorBio = Bio::where('id',$id)->first();
+        $doctorId = $doctorBio->user_id;
+        $doctorRecord = User::where('id', $doctorId)->first();
+        
+        return view('edit.doctor',['doctorBio'=>$doctorBio, 'doctorRecord'=>$doctorRecord]);
     }
 
     public function update(Request $request, $id)
@@ -106,12 +110,12 @@ class DoctorController extends Controller
     {
         $doctorBio = Bio::where('id', $id)->first();
         $doctorId = $doctorBio->user_id;
-        $doctorIdRecord = User::where('id', $doctorId)->first();
+        $doctorRecord = User::where('id', $doctorId)->first();
 
         try{
             $doctorBio->delete();
             try{
-                $doctorIdRecord->delete();
+                $doctorRecord->delete();
                 return back()->with('success', 'Doctor Deleted');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);

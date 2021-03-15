@@ -1,4 +1,4 @@
-<form class="bg-white shadow-lg p-4" action="{{ route('add-doctor') }}" method="POST" enctype="multipart/form-data">
+<form class="bg-white shadow-lg p-4" action="{{ route('add.doctor') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div>
         <h2 class="text-2xl text-center py-4 font-medium border-b-4 uppercase">Add Doctor</h2>
