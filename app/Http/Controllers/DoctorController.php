@@ -14,7 +14,13 @@ class DoctorController extends Controller
 {
     public function index()
     {
-        //
+        $doctors = DB::table('users')
+            ->where('users.category','=',2)
+            ->join('bios', 'users.id', '=', 'bios.user_id')
+            ->orderby('users.id','desc')
+            ->paginate(9);
+
+        return view('dashboard.doctor', ['doctors'=>$doctors]);
     }
 
     public function create()

@@ -26,6 +26,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 //Add Doctor
+Route::get('/alldoctor', [DoctorController::class, 'index'])->name('all-doctor');
 Route::get('/createdoctor', [DoctorController::class, 'create'])->name('create-doctor');
 Route::post('/adddoctor', [DoctorController::class, 'store'])->name('add-doctor');
 Route::patch('/editdoctor', [DoctorController::class, 'edit'])->name('edit-doctor');

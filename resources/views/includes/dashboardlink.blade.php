@@ -19,7 +19,7 @@
                 <a href="{{ route('create-doctor') }}">Add Doctor</a>
             </li>
             <li class="py-3 flex">
-                <a href="#">All Doctors</a>
+                <a href="{{ route('all-doctor') }}">All Doctors</a>
             </li>
         </div>
         
