@@ -1,4 +1,4 @@
-<form class="bg-white shadow-lg p-4" action="{{ route('add.doctor') }}" method="POST" enctype="multipart/form-data">
+<form class="bg-white shadow-lg p-4" action="{{ route('update.doctor', $doctorBio->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
     <div>
@@ -84,9 +84,14 @@
             @enderror
         </div>
     </div>
-    <div class="my-2">
-        <div class="w-full">
-            <input type="file" name="photo" value="{{old('photo')}}" class="input-box border-0 @error('photo') border-red-500 @enderror">
+    <div class="my-2 flex justify-between items-center">
+        @if($doctorBio->photo != null)
+            <div>
+                <img class="w-24 h-24 rounded-full p-2 mx-auto" src=" {{ $doctorBio->photo }} " alt="{{ $doctorBio->title }} {{ $doctorBio->name }} Image">    
+            </div>
+        @endif
+        <div>
+            <input value="{{ $doctorBio->photo }}" type="file" name="photo" value="{{old('photo')}}" class="input-box border-0 @error('photo') border-red-500 @enderror">
             @error('photo')
                 {{$message}}
             @enderror

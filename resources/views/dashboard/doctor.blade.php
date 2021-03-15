@@ -80,7 +80,9 @@
                             @endforeach
                         </div>
                         @else
-                            <p>No Doctor Found</p>
+                            <div class="bg-white text-2xl text-center py-2">
+                                No Doctor Found
+                            </div>
                         @endif
                     </div>
                 </div>

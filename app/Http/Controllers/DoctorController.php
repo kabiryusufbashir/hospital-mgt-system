@@ -103,14 +103,31 @@ class DoctorController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $data = request()->validate([
+            'title'=>'',
+            'name'=>'required',
+            'city'=>'',
+            'country'=>'',
+            'address'=>'',
+            'phone'=>'',
+            'gender'=>'',
+            'dob'=>'',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        try{
+            $doctorUpdate = Bio::where('id',$id)->update($data);
+            return back()->with('success', 'Doctor Update');
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
     }
 
     public function destroy($id)
     {
-        $doctorBio = Bio::where('id', $id)->first();
+        $doctorBio = Bio::findOrFail($id);
         $doctorId = $doctorBio->user_id;
-        $doctorRecord = User::where('id', $doctorId)->first();
+        $doctorRecord = User::findOrFail($doctorId);
 
         try{
             $doctorBio->delete();

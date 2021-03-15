@@ -29,6 +29,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/alldoctor', [DoctorController::class, 'index'])->name('all.doctor');
 Route::get('/createdoctor', [DoctorController::class, 'create'])->name('create.doctor');
 Route::post('/adddoctor', [DoctorController::class, 'store'])->name('add.doctor');
-Route::get('editdoctor/{id}/edit', [DoctorController::class, 'edit'])->name('edit.doctor');
-Route::patch('/editdoctor/{id}', [DoctorController::class, 'update'])->name('update.doctor');
+Route::get('/editdoctor/{id}/edit', [DoctorController::class, 'edit'])->name('edit.doctor');
+Route::patch('/editdoctor/{id}/update', [DoctorController::class, 'update'])->name('update.doctor');
 Route::delete('/deletedoctor/{id}', [DoctorController::class, 'destroy'])->name('del.doctor');
